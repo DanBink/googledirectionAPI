@@ -23,9 +23,11 @@
     </style>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB_M_6_zMxycUXg-LOP82RGjCj5v8jVXUg"></script>
     <script>
+      
 var directionsDisplay;
 var directionsService = new google.maps.DirectionsService();
 var map;
+      
 function initialize() {
   directionsDisplay = new google.maps.DirectionsRenderer();
   var chicago = new google.maps.LatLng(41.850033, -87.6500523);
@@ -36,6 +38,7 @@ function initialize() {
   directionsDisplay.setMap(map);
   calcRoute();
 }
+      
 function calcRoute() {
   var params = getQueryParams();
   var start = new google.maps.LatLng(params.OrgLat, params.OrgLon);
@@ -51,6 +54,7 @@ function calcRoute() {
     }
   });
 }
+      
 function getQueryParams(){
     var params = {};
     var query = window.location.search.substring(1);
@@ -64,7 +68,10 @@ function getQueryParams(){
      }
      return params;
 }
+      
 google.maps.event.addDomListener(window, 'load', initialize);
+      
+      
     </script>
   </head>
   <body>
